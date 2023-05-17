@@ -1,0 +1,44 @@
+package com.example.fontdemo;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.graphics.Color;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+
+    TextView txt;
+    float font=30;
+    int counter=1;
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+    public void fontfun(View v)
+    {
+        txt = (TextView) findViewById(R.id.txtview);
+        txt.setTextSize(font);
+        font = font + 10;
+        if (font == 50)
+            font = 30;
+    }
+    public void colfun(View v)
+    {
+        txt = (TextView) findViewById(R.id.txtview);
+        if(counter ==1)
+            txt.setTextColor(Color.GREEN);
+        if(counter==2)
+            txt.setTextColor(Color.MAGENTA);
+
+        if(counter==3)
+            txt.setTextColor(Color.BLUE);
+
+        if(counter==4)
+            txt.setTextColor(Color.BLACK);
+        counter++;
+        if(counter==4)
+         counter=1;
+    }
+}
